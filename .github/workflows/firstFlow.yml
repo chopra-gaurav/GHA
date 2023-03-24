@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: ubuntu-latestjob
+    needs: [job2]
+    steps:
+      - name: Step One
+        uses: actions/checkout@v2
+      - name: Step Two
+        run: env | sort
+    
+  job2:
+    runs-on: ubuntu-latest
+    name: ubuntu-latestjob2
+    steps:
+      - name: Job2 Checkout
+        uses: actions/checkout@v2
+      - name: GET DATE AND TIME
+        run: |
+          date
+          time
+    
+    
+  job3:
+    runs-on: ubuntu-latest
+    name: ubuntu-latestjob3
+    steps:
+      - name: Job3 Step One
+        uses: actions/checkout@v2
+      - name: GET DATE
+        run: date
+    
+    
+        
+      
+       
+      
+    
+
+    
+    
+    
+    
+    
+  
+  
+  
+  
