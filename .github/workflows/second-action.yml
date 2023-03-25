@@ -8,6 +8,8 @@ jobs:
       - name: Print Date
         run: date
       - name: Print Time
-        run: time
+        run: |
+          echo "Gaurav"
+          echo "Chopra"
         
         
