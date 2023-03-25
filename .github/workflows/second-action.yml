@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Deploy Project
 on: [workflow_dispatch, push]
 jobs:
   test:
@@ -17,6 +17,7 @@ jobs:
         
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Get Latest
         uses: actions/checkout@v3
