@@ -1,15 +1,21 @@
-name: Custom Workflow
-on: push
+name: Run Unit Tests
+on: [workflow_dispatch, push]
 jobs:
-  first-job:
-    name: firstJob
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Date
-        run: date
-      - name: Print Time
-        run: |
-          echo "Gaurav"
-          echo "Chopra"
+      - name: Get Latest 
+        uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Insstall Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
         
         
+        
+  
+
