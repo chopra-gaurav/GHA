@@ -1,0 +1,13 @@
+name: Custom Workflow
+on: [workflow_dispatch, push]
+jobs:
+  first-job:
+    name: firstJob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Date
+        run: date
+      - name: Print Time
+        run: time
+        
+        
