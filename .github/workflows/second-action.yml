@@ -1,5 +1,5 @@
 name: Custom Workflow
-on: [workflow_dispatch, push]
+on: push
 jobs:
   first-job:
     name: firstJob
